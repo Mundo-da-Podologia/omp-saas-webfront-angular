@@ -12,12 +12,6 @@ services:
     volumes:
       - dependencies:/app/node_modules
       - .:/app
-    networks:
-      - local_network
-
-networks:
-  local_network:
-    driver: bridge
 
 volumes:
   dependencies:
