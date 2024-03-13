@@ -6,10 +6,18 @@ services:
       context: .
       dockerfile: Dockerfile
     tty: true
-    command: /bin/sh
+    command: npm run start:dev
+    ports:
+      - 4200:4200
     volumes:
       - dependencies:/app/node_modules
       - .:/app
+    networks:
+      - local_network
+
+networks:
+  local_network:
+    driver: bridge
 
 volumes:
   dependencies:
