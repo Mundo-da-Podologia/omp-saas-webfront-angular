@@ -2,6 +2,8 @@ FROM node:alpine AS builder
 
 WORKDIR /app
 
+RUN apk add curl 
+
 RUN npm install --global npm@latest
 RUN npm install --global @angular/cli
 
